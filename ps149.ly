@@ -1,4 +1,8 @@
 \version "2.16.1"
+
+% for controlling paper size
+% #(set-default-paper-size "a6")
+
 stemOff = { 
     \override Staff.Stem #'transparent = ##t
     % to fix spacing issues caused by down-stems
@@ -36,6 +40,24 @@ longbar = {
   \revert Rest #'font-size
   \revert Rest #'staff-position
 }
+
+% left-align the score
+\layout {
+    \indent = 0
+}
+
+\markup {
+    \column {
+      \left-align {
+        \line {
+            \bold { Psalm 149 }
+            \hspace #2
+            \fontsize #-3 \italic { Cantate Domino }
+        }
+      }
+    }
+}
+
 
 \score {
   \new Staff \with { \remove "Time_signature_engraver" }
