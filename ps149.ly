@@ -17,6 +17,14 @@ hugetick = \markup {
   \raise #2 \fontsize #-2 \musicglyph #"scripts.rvarcomma"
 }
 
+bigslash = \markup {
+  \fontsize #2 /
+
+  % experimental - idea for a different slash
+  %  \draw-line #'(2 . 3)
+}
+
+
 umlaut = \markup {
   \raise #2 \fontsize #-3 \musicglyph #"dots.dot"
   \raise #2 \hspace #0.25
@@ -49,7 +57,14 @@ longbar = #(define-music-function (parser location pos) (number?)
 % left-align the score
 \layout {
     indent = #0
+    \context {
+        \Staff
+        \remove "Time_signature_engraver"
+    }
 }
+
+% prototype for em-dash, sometimes needed to skip a tone. Needs less space in front.
+emdash = \markup { \char ##x2014 \hspace #0 }
 
 %
 % Psalm Title
@@ -59,19 +74,15 @@ longbar = #(define-music-function (parser location pos) (number?)
     \fontsize #-3 \italic { Cantate Domino }
 }
 
-
 %
 % Chant Line
 \score {
-  \new Staff \with { \remove "Time_signature_engraver" }
-  {
-    \relative c'  {
+  \new Staff \relative c'  {
         \cadenzaOn
         \stemOff 
         \tallParens
         f4 g (a) \longbar 2 \longbar 1 \longbar 0 bes_\markup { \tick } \parenthesize a g_\markup { \tick } \parenthesize a a2 \bar "|" 
-        \longbar 2 g4_\markup {  / } f g_\markup { \tick } (a) \parenthesize g g2 \bar "||"
-    }
+        \longbar 2 g4_\markup { \bigslash } f g_\markup { \tick } (a) \parenthesize g g2 \bar "||"
   }
 }
 
@@ -85,7 +96,7 @@ longbar = #(define-music-function (parser location pos) (number?)
         }
         \line {
           \concat {
-            Hall \combine \umlaut elujah!
+            \emdash Hall \combine \umlaut elujah!
           }
         }
         \line {

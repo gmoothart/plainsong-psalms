@@ -11,8 +11,6 @@ ToDo
 - line indents for psalm text
 - extract formatting into a common file for re-use
 - umlaut/tick discrepancy: ticks must go after the letter they appear over, but umlauts must go before.
-- em-dash for some psalm text
-- emphasize the slash in the chant line, so it is more distinguishable from the tick
 - slash in _The Plainsong Psalter_ is more 45-degree, can I do that?
 - tick in psalm text should be moved left so it is more 'over' the letter (148:3)
 - back-tick (148:10)
