@@ -25,40 +25,43 @@ umlaut = \markup {
 
 tallParens = {
   \override ParenthesesItem #'font-size = #-1
-
 }
 
 % definition of the long bar
-longbar = {
-    % want "rests.1" glyph!!!
-  \override Rest #'font-size = #4
-  \override Rest #'staff-position = #-3
-  \override Rest #'glyph = #"rests.1"
-  r2*1/4
-  \once \override Rest #'extra-offset = #'(-1.3 . 0)
-  r2*1/4
-  \revert Rest #'font-size
-  \revert Rest #'staff-position
-}
+%   The Rest glyph we need is only drawn for even staff lines, so in cases
+%   where we want it on an odd lines, we draw it on the lower even line
+%   and then bump it up by 0.5 with extra-offset.
+longbar = #(define-music-function (parser location pos) (number?)
+  (let ((offset (if (odd? pos) 0.5 0))
+        (staffpos (if (odd? pos) (- pos 1) pos))
+       )
+       #{
+       \override Rest #'font-size = #4
+       \override Rest #'staff-position = #staffpos
+       \override Rest #'extra-offset = #(cons 0 offset)
+       r2*1/4
+       \once \override Rest #'extra-offset = #(cons -1.3 offset)
+       r2*1/4
+       \revert Rest #'font-size
+       \revert Rest #'staff-position
+       #}))
 
 % left-align the score
 \layout {
-    \indent = 0
+    indent = #0
 }
 
+%
+% Psalm Title
 \markup {
-    \column {
-      \left-align {
-        \line {
-            \bold { Psalm 149 }
-            \hspace #2
-            \fontsize #-3 \italic { Cantate Domino }
-        }
-      }
-    }
+    \bold { Psalm 149 }
+    \hspace #2
+    \fontsize #-3 \italic { Cantate Domino }
 }
 
 
+%
+% Chant Line
 \score {
   \new Staff \with { \remove "Time_signature_engraver" }
   {
@@ -66,17 +69,22 @@ longbar = {
         \cadenzaOn
         \stemOff 
         \tallParens
-        f4 g (a) \longbar bes_\markup { \tick } \parenthesize a g_\markup { \tick } \parenthesize a a2 \bar "|" 
-        \longbar g4_\markup {  / } f g_\markup { \tick } (a) \parenthesize g g2 \bar "||"
+        f4 g (a) \longbar 2 \longbar 1 \longbar 0 bes_\markup { \tick } \parenthesize a g_\markup { \tick } \parenthesize a a2 \bar "|" 
+        \longbar 2 g4_\markup {  / } f g_\markup { \tick } (a) \parenthesize g g2 \bar "||"
     }
   }
 }
 
+%
+% Pointed Text
 \markup {
     \column {
       \left-align {
         \line {
-          *1 \concat {
+          1
+        }
+        \line {
+          \concat {
             Hall \combine \umlaut elujah!
           }
         }
