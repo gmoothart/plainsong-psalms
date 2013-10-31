@@ -1,8 +1,11 @@
 \version "2.16.2"
 
 % for controlling paper size
+#(set! paper-alist (cons '("bulletin" . (cons (* 9 in) (* 1 in))) paper-alist))
+
+
 \paper {
-  #(set-paper-size "half letter")
+  #(set-paper-size "bulletin")
 }
 
 \header { 
