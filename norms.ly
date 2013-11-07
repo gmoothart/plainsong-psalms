@@ -1,11 +1,12 @@
 \version "2.16.2"
 
 % for controlling paper size
-#(set! paper-alist (cons '("bulletin" . (cons (* 9 in) (* 1 in))) paper-alist))
+#(set! paper-alist (cons '("bulletin" . (cons (* 9 in) (* 1.2 in))) paper-alist))
 
 
 \paper {
   #(set-paper-size "bulletin")
+  left-margin = 0\cm
 }
 
 \header { 
@@ -19,15 +20,15 @@ stemOff = {
 }
 
 tick = \markup {
-  \raise #2 \fontsize #-5 \musicglyph #"scripts.rvarcomma"
-}
-
-hugetick = \markup {
   \raise #2 \fontsize #-2 \musicglyph #"scripts.rvarcomma"
 }
 
+%hugetick = \markup {
+%  \raise #2 \fontsize #-2 \musicglyph #"scripts.rvarcomma"
+%}
+
 bigslash = \markup {
-  \fontsize #2 /
+  \fontsize #4 /
 
   % experimental - idea for a different slash
   %  \draw-line #'(2 . 3)
