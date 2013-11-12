@@ -23,10 +23,6 @@ tick = \markup {
   \raise #2 \fontsize #-2 \musicglyph #"scripts.rvarcomma"
 }
 
-%hugetick = \markup {
-%  \raise #2 \fontsize #-2 \musicglyph #"scripts.rvarcomma"
-%}
-
 bigslash = \markup {
   \fontsize #4 /
 
@@ -70,6 +66,11 @@ longbar = #(define-music-function (parser location pos) (number?)
     \context {
         \Staff
         \remove "Time_signature_engraver"
+    }
+    \context {
+        \Score
+        \override SpacingSpanner
+        #'common-shortest-duration = #(ly:make-moment 3 16)
     }
 }
 
