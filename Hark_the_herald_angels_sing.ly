@@ -2,7 +2,7 @@
 
 
 \version "2.16.2"
-#(set-default-paper-size "a4")
+#(set-default-paper-size "letter")
 #(set-global-staff-size 19)
 
 \header {
@@ -16,11 +16,15 @@
 
 \paper {
 % 	between-system-space = 0.3\cm
-	%between-system-padding = 0.3\cm
-	%after-title-space = 0.05\cm
+	between-system-padding = 0.3\cm
+	after-title-space = 0.05\cm
     indent = 0
 % 	ragged-bottom = ##f
 % 	ragged-last-bottom = ##f
+    %page-breaking = #ly:minimal-breaking
+    %page-count = #2
+    %system-count = #5
+
 }
 
 \include "deutsch.ly"
@@ -93,7 +97,7 @@ bassMusic = \transpose g f {
 VerseI = \lyricmode
 {
   \set stanza = "1"
-  Hark! the he -- rald an -- gels sing, __ Glo -- ry to the new -- born King. Peace on earth and mer -- cy mild, __ God and sin -- ners re -- con -- cil'd. Joy -- ful all ye na -- tions rise. __ Join the tri -- umph of the skies. With th'an -- ge -- lic host pro -- claim: Christ is __ bor in Beth -- le -- hem. Hark! the he -- rald an -- gels sing, Glo -- ry __ to the new -- born King!
+  Hark! the he -- rald an -- gels sing, __ Glo -- ry to the new -- born King. Peace on earth and mer -- cy mild, __ God and sin -- ners re -- con -- cil'd. Joy -- ful all ye na -- tions rise. __ Join the tri -- umph of the skies. With th'an -- ge -- lic host pro -- claim: Christ is __ bor in Beth -- le -- hem.
 }
 
 VerseII = \lyricmode
@@ -101,7 +105,8 @@ VerseII = \lyricmode
   \set stanza = "2"
   Christ, by high -- est heav'n a -- dor'd, Christ, the e -- ver -- last -- ing Lord,
   Late in time be -- hold Him come, off -- spring of a vir -- gin's womb, Veil'd in flesh the God -- head he,
-  Hail th'in -- car -- nate De -- i -- ty! Pleas'd as man with man ap -- pear, Je -- sus our Im -- man -- uel here. Hark! the he -- rald an -- gels sing, Glo -- ry __ to the new -- born King!
+  Hail th'in -- car -- nate De -- i -- ty! Pleas'd as man with man ap -- pear, Je -- sus our Im -- man -- uel here.
+  Hark! the he -- rald an -- gels sing, Glo -- ry __ to the new -- born King!
 }
 
 VerseIII = \lyricmode
@@ -113,7 +118,6 @@ VerseIII = \lyricmode
   Born that man no more may die
   Born to raise the sons of earth
   Born to give them sec -- ond birth
-  Hark! the he -- rald an -- gels sing, Glo -- ry __ to the new -- born King!
 }
 
 \score {
@@ -125,7 +129,7 @@ VerseIII = \lyricmode
       \dynamicUp
       \context Voice = sopranos { \voiceOne << \GlobalSettings \sopMusic >> }
       \context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
-      \set Staff.instrument = \markup { \column { "S" \line {"A"} } }
+      %\set Staff.instrument = \markup { \column { "S" \line {"A"} } }
     >>
     \context Lyrics = sopranosI \lyricsto sopranos \VerseI
     \context Lyrics = sopranosII \lyricsto sopranos \VerseII
@@ -137,7 +141,7 @@ VerseIII = \lyricmode
       \dynamicDown
       \context Voice = tenors { \voiceOne <<\GlobalSettings \tenorMusic >> }
       \context Voice = basses { \voiceTwo <<\GlobalSettings \bassMusic >> }
-      \set Staff.instrument = \markup { \column { "T" \line {"B"} } }
+      %\set Staff.instrument = \markup { \column { "T" \line {"B"} } }
     >>
   >>
 }

@@ -7,6 +7,8 @@
 \paper {
   #(set-paper-size "bulletin")
   left-margin = 0\cm
+  % almost works, but doesn't print the text??
+  %page-breaking = #ly:one-line-breaking
 }
 
 \header { 
