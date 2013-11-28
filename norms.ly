@@ -1,7 +1,7 @@
 \version "2.16.2"
 
 % for controlling paper size
-#(set! paper-alist (cons '("bulletin" . (cons (* 9 in) (* 1.2 in))) paper-alist))
+#(set! paper-alist (cons '("bulletin" . (cons (* 4.5 in) (* 1.2 in))) paper-alist))
 
 
 \paper {
@@ -60,14 +60,15 @@ longbar = #(define-music-function (parser location pos) (number?)
        \revert Rest #'staff-position
        #}))
 
-% left-align the score
 \layout {
+    % left-align the score
     indent = #0
     \context {
         \Staff
         \remove "Time_signature_engraver"
     }
     \context {
+        % shorten distance between notes
         \Score
         \override SpacingSpanner
         #'common-shortest-duration = #(ly:make-moment 3 16)
