@@ -6,7 +6,7 @@
 #(set-global-staff-size 19)
 
 \header {
-  title = "Hark, the herald angels sing"
+  title = "Hark! the herald angels sing"
   enteredby = "Reinhold Kainhofer"
   maintainer = "R. Kainhofer"
   maintainerEmail = "reinhold@kainhofer.com"
