@@ -63,7 +63,7 @@ sopMusic = \relative c' {
 }
 
 altoMusic = \relative c' {
-    d4 | c2 d4 f4. (e8) f4 | c2 (f4 e2) f4 | d2 c4 f4. (e8) f4 | c2 (f4 e2.) |
+    d4 | c2 d4 f2 f4 | c2 (f4 e2) f4 | d2 c4 f2 f4 | a2 (f4 e2.) |
     f2 f4 e2 g4 | f2 e4 f2. | e2 d4 e2 e4 | f4. (d8) e4 f2. |
     f2 f4 f2 g4 | f2 e4 d2 f4 | f2 f4 e4. (d8) e4 | f2 e4 e2. |
                          % parenthesize natural?
@@ -71,14 +71,14 @@ altoMusic = \relative c' {
 }
 
 tenorMusic = \relative c' {
-    b4 | a2 b4 c2 d4 | a2 (b4 g2) a4 | b2 a4 c2 d4 | a2 (b4 g2.) |
+    b4 | a2 b4 c2 d4 | a2 (b4 c2) c4 | b2 a4 c2 d4 | c2 (b4 g2.) |
     c2 b4 g2 c4 | c2 b4 a2. | c2 d4 c2 b4 | a2 c4 c2. |
     c2 b4 c2 c4 | c2 b4 a2 c4 | d2 d4 c4. (b8) c4 | a2 c4 c2. |
     f,2 a4 g2 a4 | a4. (b8 a4 g2.) | f2 c'4 d2 c4 | a2. \bar"|." 
 }
 
 bassMusic = \relative c' {
-    b,4 | f'2 f4 f2 f4 | f2. (f2) f4 | f2 f4 f2 f4 | f2. (c2.) |
+    b,4 | f'2 f4 f2 f4 | f2. (g2) a4 | f2 f4 f2 f4 | f2. (c2.) |
     a2 b4 c2 e4 | f2 c4 d2. | c2 b4 a2 c4 | d2 c4 f2. |
     a2 b4 a2 e4 | f2 c4 d2 a'4 | b2 b,4 c2 c4 | d2 c4 a2. |
     d2 f4 e2 a,4 | d2. (e2.) | f2 a,4 b2 c4 | f2. \bar"|." 
@@ -105,7 +105,7 @@ VerseII = \lyricmode
   Now ye hear of end -- less bliss;
   Je -- sus Christ was born for this!
   He hath o -- pened hea -- ven's door
-  and man is blest for ev -- er -- more.
+  and man is bless -- ed ev -- er -- more.
   Christ was born for this!
   Christ was born for this!
 }
