@@ -7,6 +7,7 @@
 
 \header {
   title = "Good Christian Men, Rejoice"
+  tagline = ""
 }
 
 
@@ -55,9 +56,9 @@ dynamik = {}
 tempos = {}
 
 sopMusic = \relative c' {
-    f4 | f2 f4 a2 b4 | c2 (d4 c2) c4 | f,2 f4 a2 b4 | c2 (d4 c2.) |
-    c2 d4 c2 b4 | a2 g4 f2.   | g2 g4 a2 g4 | f2 g4 a2. |
-    c2 d4 c2 b4 | a2 g4 f2 f4 | g2 g4 a2 g4 | f2 g4 a2. |
+    f4 | f2 f4 a2 b4 | c2 (d4 c2) c4 | f,2 f4 a2 b4 | c2 (d4 c2.) | \break
+    c2 d4 c2 b4 | a2 g4 f2.   | g2 g4 a2 g4 | f2 g4 a2. | \break
+    c2 d4 c2 b4 | a2 g4 f2 f4 | g2 g4 a2 g4 | f2 g4 a2. | \break
     d,2 d4 e2 e4 | f2. (c'2.)   | a2 a4 g2 g4 | f2. \bar"|."
 }
 
@@ -86,40 +87,40 @@ bassMusic = \relative c' {
 VerseI = \lyricmode
 {
   \set stanza = "1"
-  Good Christian men rejoice
-  With heart and soul and voice!
-  Give ye heed to what we say
-  Jesus Christ is born today!
-  Ox and ass before Him bow
-  And He is in the manger now
-  Christ is born today!
-  Christ is born today!
+  Good Chris -- tian men, re -- joice
+  with heart and soul and voice!
+  Give ye heed to what we say:
+  Je -- sus Christ is born to -- day!
+  Ox and ass be -- fore Him bow
+  and He is in the man -- ger now.
+  Christ is born to -- day!
+  Christ is born to -- day!
 }
 
 VerseII = \lyricmode
 {
   \set stanza = "2"
-  Good Christian men, rejoice
-  With heart and soul and voice
-  Now ye hear of endless bliss
-  Jesus Christ was born for this
-  He hath ope'd the heav'nly door
-  And man is blessed evermore
-  Christ was born for this
-  Christ was born for this
+  Good Chris -- tian men, re -- joice
+  with heart and soul and voice!
+  Now ye hear of end -- less bliss;
+  Je -- sus Christ was born for this!
+  He hath o -- pened hea -- ven's door
+  and man is blest for ev -- er -- more.
+  Christ was born for this!
+  Christ was born for this!
 }
 
 VerseIII = \lyricmode
 {
   \set stanza = "3"
-  Good Christian men, rejoice
-  With heart and soul and voice
+  Good Chris -- tian men, re -- joice
+  with heart and soul and voice!
   Now ye need not fear the grave:
-  Jesus Christ was born to save
+  Je -- sus Christ was born to save!
   Calls you one and calls you all
-  To gain His everlasting hall
-  Christ was born to save
-  Christ was born to save
+  to gain His ev -- er -- last -- ing hall.
+  Christ was born to save!
+  Christ was born to save!
 }
 
 \score {
@@ -133,9 +134,9 @@ VerseIII = \lyricmode
       \context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
       %\set Staff.instrument = \markup { \column { "S" \line {"A"} } }
     >>
-    %\context Lyrics = sopranosI \lyricsto sopranos \VerseI
-    %\context Lyrics = sopranosII \lyricsto sopranos \VerseII
-    %\context Lyrics = sopranosIII \lyricsto sopranos \VerseIII
+    \context Lyrics = sopranosI \lyricsto sopranos \VerseI
+    \context Lyrics = sopranosII \lyricsto sopranos \VerseII
+    \context Lyrics = sopranosIII \lyricsto sopranos \VerseIII
 
     \context Staff = men <<
       \clef bass

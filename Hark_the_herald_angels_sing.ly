@@ -6,11 +6,12 @@
 #(set-global-staff-size 19)
 
 \header {
-  title = "Hark! the herald angels sing"
+  title = "Hark! The Herald Angels Sing"
   enteredby = "Reinhold Kainhofer"
   maintainer = "R. Kainhofer"
   maintainerEmail = "reinhold@kainhofer.com"
   lastupdated = "16. Dezember 2006"
+  tagline = ""
 }
 
 
@@ -48,7 +49,7 @@ GlobalSettings = \notemode
 {	
 	\key f \major
 	\time 4/4
-	\partial 2
+	%\partial 2
 % 	\autoBeamOff
 	\revert Rest #'direction
 	\revert MultiMeasureRest #'staff-position
@@ -60,52 +61,56 @@ tempos = {}
 
 sopMusic = \transpose g f {
   \relative c' {
-    d4 g | g4. fis8 g4 h | h( a) d d | d4. c8 h4 a | h2 d,4 g | 
-    g4. fis8 g4 h | h( a) d a | a4. fis8 fis4 e | d2  d'4 d | d g, c h |
-    h( a) d d | d g, c h | a2 e'4 e | e d c h | c2 a4 h8( c) |
-    d4 g, g a | h2 e4. e8 | e4 d c h | c2 a4 h8( c) | d4. g,8 g4 a | g2 \bar"|."
+    d4 g g4. fis8 g4 h h( a) d d d4. c8 h4 a h2 | \break
+    d,4 g g4. fis8 g4 h h( a) d a a4. fis8 fis4 e d2 | \break
+    d'4 d d g, | c h h( a) | d d d g, | c h h (a) | \break
+    e'4. e8 e4 d | c h c2 | a4 h8( c) d4. g,8 | g4 a h2 | \break
+    e4. e8 e4 d c h c2 a4 h8( c) d4. g,8 g4 a g2 \bar"|."
   }
 }
 
 altoMusic = \transpose g f {
   \relative c' {
-    d4 d | d4. d8 d4 g | g( fis) g fis | e4. e8 d4 d | d2 d4 d |
-    d4. d8 h4 d | e2 d4 e | fis4. d8 d4 cis | d2 d4 d | d g a g |
-    g( fis) d d | d g a g | fis2 g4 g | e e e e | e2 fis4 fis |
-    g d d fis | g2 g4. g8 | e4 e e e | e2 fis4 fis | g4. g8 g4 fis | d2 \bar"|."
+    d4 d d4. d8 | d4 g g( fis) | g fis e4 a | g4 d d2 |
+    d4 d d4. d8 | h4 d e2 | d4 e fis4. d8 | d4 cis d2 |
+    d4 d d g | a g g( fis) | d d d g | a g g (fis) |
+    g4. g8 e4 f | e e e2 | fis4 fis g4. d8 | d4 fis g2 |
+    g4. g8 g4 g | e e e2 | fis4 fis g4. g8 | g4 fis d2 \bar"|."
   }
 }
 
 tenorMusic = \transpose g f {
   \relative c' {
-    h4 h | h4. a8 g4 d' | d2 g,4 g | g4. a8 h4 c | h2 h4 h |
-    h4. a8 g4 g | g2 fis4 a | a4. a8  h4 a8( g) | fis2 d'4 d | d d d d | 
-    d2 d4 d | d d d d | d2 e4 e | c h a gis | a2 a4 d |
-    d h h d | d2 e4. e8 | c4 d e h | a2 a4 d | d4. h8 h4 c | h2 \bar"|."
+    h4 h h4. a8 | g4 d' d2 | g,4 g g4. a8 | h4 c h2 |
+    h4 h h4. a8 | g4 g g2 | fis4 a a4. a8 | h4 a8( g) fis2 |
+    d'4 d d d | d d d2 | d4 d d d | d d d2 |
+    e4. e8 c4 h | a gis a2 | a4 d d4. h8 | h4 d d2 |
+    e4. e8 e4 d | e h a2 | a4 d d4. h8 | h4 c h2 \bar"|."
   }
 }
 
 bassMusic = \transpose g f {
   \relative c' {
-    g4 g | g4. d8 h4 g | d'2 h4 h | c4. c8 d4 d | g,2 g'4 g |
-    g4. d8 e4 d | cis4( a) h cis | d4. fis8 g4 a8( a,) | d2 d'4 d | d h fis g |
-    d2 d'4 d | d h fis g | d2 c4 c | c c c e | a,2 d4 c |
-    h4 g d' d | g2 c4. c8 | c4 h a gis | a2 d,4 c | h g d' d | <g g,>2 \bar"|."
+    g4 g g4. d8 | h4 g d'2 | h4 h c4. c8 | d4 d g,2 |
+    g'4 g g4. d8 | e4 d cis4( a) | h cis d4. fis8 | g4 a8( a,) d2 |
+    d'4 d d h | fis g d2 | d'4 d d h | fis g d2 |
+    c4. c8 c4 d | c e a,2 | d4 c h4. g8 | d'4 d g2 |
+    c4. c8 c4 h | a gis a2 | d,4 c h g | d' d <g g,>2 \bar"|."
   }
 }
 
 VerseI = \lyricmode
 {
   \set stanza = "1"
-  Hark! the he -- rald an -- gels sing, __ Glo -- ry to the new -- born King. Peace on earth and mer -- cy mild, __ God and sin -- ners re -- con -- cil'd. Joy -- ful all ye na -- tions rise. __ Join the tri -- umph of the skies. With th'an -- ge -- lic host pro -- claim: Christ is __ bor in Beth -- le -- hem.
+  Hark! the he -- rald an -- gels sing, __ Glo -- ry to the new -- born King. Peace on earth and mer -- cy mild, __ God and sin -- ners re -- con -- cil'd. Joy -- ful all ye na -- tions rise. __ Join the tri -- umph of the skies. With th'an -- ge -- lic host pro -- claim: Christ is __ born in Beth -- le -- hem.
 }
 
 VerseII = \lyricmode
 {
   \set stanza = "2"
   Christ, by high -- est heav'n a -- dor'd, Christ, the e -- ver -- last -- ing Lord,
-  Late in time be -- hold Him come, off -- spring of a vir -- gin's womb, Veil'd in flesh the God -- head he,
-  Hail th'in -- car -- nate De -- i -- ty! Pleas'd as man with man ap -- pear, Je -- sus our Im -- man -- uel here.
+  Late in time be -- hold Him come, off -- spring of the vir -- gin's womb, Veil'd in flesh the God -- head see,
+  Hail th'in -- car -- nate De -- i -- ty! Pleas'd as man with men to dwell, Je -- sus our Im -- man -- u -- el.
   Hark! the he -- rald an -- gels sing, Glo -- ry __ to the new -- born King!
 }
 
