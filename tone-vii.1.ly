@@ -1,3 +1,14 @@
+\include "norms.ly"
+
+\layout {
+    \context {
+        % longer-than-usual chant line, so squeeze the notes
+        % a little closer together
+        \Score
+        \override SpacingSpanner
+        #'common-shortest-duration = #(ly:make-moment 4 16)
+    }
+}
 
 \score {
   \new Staff \relative g'  {

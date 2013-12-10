@@ -1,7 +1,7 @@
 \version "2.16.2"
 
 % for controlling paper size
-#(set! paper-alist (cons '("bulletin" . (cons (* 4.5 in) (* 1.2 in))) paper-alist))
+#(set! paper-alist (cons '("bulletin" . (cons (* 4.5 in) (* 0.75 in))) paper-alist))
 
 
 \paper {
