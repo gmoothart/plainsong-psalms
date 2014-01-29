@@ -1,3 +1,4 @@
+\include "norms.ly"
 
 \score {
   \new Staff \relative g'  {
