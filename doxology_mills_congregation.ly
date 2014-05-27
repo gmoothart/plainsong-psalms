@@ -21,7 +21,7 @@ line = \relative g'  {
     % Praise Him above ye heavenly host
     g2 a4 b a g e2 fis g2.
     % Praise Father, Son, and Holy 
-    d'4 b g a d b2 a
+    d'4 b g a c b2 a
     \time 3/2
     % Ghost, Amen
     g1 r2 g1. g
