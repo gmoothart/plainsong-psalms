@@ -5,8 +5,19 @@
 
 \version "2.18.2"
 
+\header { 
+  tagline = "" 
+} 
+
+% for controlling paper size
+#(set! paper-alist (cons '("bulletin" . (cons (* 4.5 in) (* 5.0 in))) paper-alist))
+
 \paper {
-  %indent = 0
+  #(set-paper-size "bulletin")
+  left-margin = 0\cm
+  % almost works, but doesn't print the text??
+  %page-breaking = #ly:one-line-breaking
+  indent = 0
 }
 
 line = \relative g'  {

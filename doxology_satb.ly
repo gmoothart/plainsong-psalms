@@ -6,11 +6,15 @@
 \version "2.18.2"
 
 \header {
-  %title = "All Blessings Flow"
-  %tagline = "Music engraving by LilyPond 2.18.2—www.lilypond.org"
+  title = "Doxology"
+  arranger = "arr. Andrew Mills"
+  opus = "Old 100th"
+  piece = "Thomas Ken"
+  copyright = \markup { \char ##x00A9 "St. James Music Press, 2012 - www.sjmp.com " }
 }
 
 \paper {
+  top-margin = 1\cm
   %indent = 0
 }
 
