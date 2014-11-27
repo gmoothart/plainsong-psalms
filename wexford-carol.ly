@@ -6,7 +6,7 @@
 #(set-global-staff-size 19)
 
 \header {
-  title = "Good Christian Men, Rejoice"
+  title = "Wexford Carol"
   tagline = ""
 }
 
@@ -43,9 +43,9 @@ ScoreSettings = {
 
 GlobalSettings = \notemode
 {	
-	\key f \major
-	\time 6/4
-	\partial 4
+	\key g \major
+	\time 3/4
+	\partial 8
 % 	\autoBeamOff
 	\revert Rest #'direction
 	\revert MultiMeasureRest #'staff-position
@@ -56,13 +56,19 @@ dynamik = {}
 tempos = {}
 
 sopMusic = \relative c' {
-    f4 | f2 f4 a2 b4 | c2 (d4 c2) c4 | f,2 f4 a2 b4 | c2 (d4 c2.) | \break
-    c2 d4 c2 b4 | a2 g4 f2.   | g2 g4 a2 g4 | f2 g4 a2. | \break
-    c2 d4 c2 b4 | a2 g4 f2 f4 | g2 g4 a2 g4 | f2 g4 a2. | \break
-    d,2 d4 e2 e4 | f2. (c'2.)   | a2 a4 g2 g4 | f2. \bar"|."
+    d8 | g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 d8 | c8 b8 g8 (d4) e8 | \break
+    f8 g8 f4 r8 d8 | g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 b8 | \break
+    c8 d8 b8 (g4) a8 | g8 g8 g4 r8 g8 | g8 f'8 d8 (c4) a8 | \break
+    bes8 c8 bes4. d16 (c16) | \times 2/3 {bes8 (a8) g8} g8 (d4) e8 | f8 g8 f4 r8 d8 | \break
+    g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 b8 | c8 d8 b8 g4 a8 | g8 g8 g4.\fermata \bar"|."
 }
 
 altoMusic = \relative c' {
+    
+
+
+
+
     d4 | c2 d4 f2 f4 | c2 (f4 e2) f4 | d2 c4 f2 f4 | a2 (f4 e2.) |
     f2 f4 e2 g4 | f2 e4 f2. | e2 d4 e2 e4 | f4. (d8) e4 f2. |
     f2 f4 f2 g4 | f2 e4 d2 f4 | f2 f4 e4. (d8) e4 | f2 e4 e2. |
@@ -87,40 +93,37 @@ bassMusic = \relative c' {
 VerseI = \lyricmode
 {
   \set stanza = "1"
-  Good Chris -- tian men, re -- joice
-  with heart and soul and voice!
-  Give ye heed to what we say:
-  Je -- sus Christ is born to -- day!
-  Ox and ass be -- fore Him bow
-  and He is in the man -- ger now.
-  Christ is born to -- day!
-  Christ is born to -- day!
+  Good peo -- ple all, this Christ -- mas -- time, Con -- si -- der well and
+  bear in mind What our good God for us has done, In
+  send -- ing his be -- lo -- ved Son. With Ma -- ry ho -- -- ly
+  we should pray To God with love this Christ -- mas Day; In
+  Beth -- le -- hem up -- on that morn There was a bless -- ed Mes -- si -- ah born.
 }
 
 VerseII = \lyricmode
 {
   \set stanza = "2"
-  Good Chris -- tian men, re -- joice
-  with heart and soul and voice!
-  Now ye hear of end -- less bliss;
-  Je -- sus Christ was born for this!
-  He hath o -- pened hea -- ven's door
-  and man is bless -- ed ev -- er -- more.
-  Christ was born for this!
-  Christ was born for this!
+  Near Beth -- le -- hem did shep -- herds keep 
+  Their flocks of lambs and feed -- ing sheep;
+  To whom God's ang -- els did ap -- pear,
+  Which put the shep -- herds in great fear.
+  'Pre -- pare and go', the an -- gels said,
+  'To Beth -- le -- hem, be not af -- raid;
+  For there you'll find, this hap -- py morn,
+  A prince -- ly ba -- be, sweet Je -- sus born.'
 }
 
 VerseIII = \lyricmode
 {
   \set stanza = "3"
-  Good Chris -- tian men, re -- joice
-  with heart and soul and voice!
-  Now ye need not fear the grave:
-  Je -- sus Christ was born to save!
-  Calls you one and calls you all
-  to gain His ev -- er -- last -- ing hall.
-  Christ was born to save!
-  Christ was born to save!
+  With thank -- ful heart and joy -- ful mind,
+  The shep -- herds went the babe to find,
+  And as God's an -- gel had fore -- told,
+  They did our Sav -- ior Christ be -- hold.
+  With -- in a man -- ger he was laid,
+  And by his side the vir -- gin maid,
+  At -- tend -- ing on the Lord of life,
+  Who came on ea -- rth to end all strife.
 }
 
 \score {
@@ -131,7 +134,7 @@ VerseIII = \lyricmode
       \tempos
       \dynamicUp
       \context Voice = sopranos { \voiceOne << \GlobalSettings \sopMusic >> }
-      \context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
+      %\context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
       %\set Staff.instrument = \markup { \column { "S" \line {"A"} } }
     >>
     \context Lyrics = sopranosI \lyricsto sopranos \VerseI
@@ -142,8 +145,8 @@ VerseIII = \lyricmode
       \clef bass
       \dynamik
       \dynamicDown
-      \context Voice = tenors { \voiceOne <<\GlobalSettings \tenorMusic >> }
-      \context Voice = basses { \voiceTwo <<\GlobalSettings \bassMusic >> }
+      %\context Voice = tenors { \voiceOne <<\GlobalSettings \tenorMusic >> }
+      %\context Voice = basses { \voiceTwo <<\GlobalSettings \bassMusic >> }
       %\set Staff.instrument = \markup { \column { "T" \line {"B"} } }
     >>
   >>

@@ -28,7 +28,7 @@
 
 }
 
-\include "deutsch.ly"
+%\include "deutsch.ly"
 
 ScoreSettings = {
 % 	\set Score.skipBars = ##t
