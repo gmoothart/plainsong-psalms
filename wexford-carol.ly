@@ -47,7 +47,7 @@ GlobalSettings = \notemode
 	\time 3/4
 	\partial 8
 % 	\autoBeamOff
-	\revert Rest #'direction
+	%\revert Rest #'direction
 	\revert MultiMeasureRest #'staff-position
 }
 
@@ -60,34 +60,31 @@ sopMusic = \relative c' {
     f8 g8 f4 r8 d8 | g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 b8 | \break
     c8 d8 b8 (g4) a8 | g8 g8 g4 r8 g8 | g8 f'8 d8 (c4) a8 | \break
     bes8 c8 bes4. d16 (c16) | \times 2/3 {bes8 (a8) g8} g8 (d4) e8 | f8 g8 f4 r8 d8 | \break
-    g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 b8 | c8 d8 b8 g4 a8 | g8 g8 g4.\fermata \bar"|."
+    g8 g16 (fis16) g4. a8 | b8 c8 d4 r8 b8 | c8 d8 \slurDashed b8 (g4) a8 | g8 g8 g4.\fermata \bar"|."
 }
 
 altoMusic = \relative c' {
-    
-
-
-
-
-    d4 | c2 d4 f2 f4 | c2 (f4 e2) f4 | d2 c4 f2 f4 | a2 (f4 e2.) |
-    f2 f4 e2 g4 | f2 e4 f2. | e2 d4 e2 e4 | f4. (d8) e4 f2. |
-    f2 f4 f2 g4 | f2 e4 d2 f4 | f2 f4 e4. (d8) e4 | f2 e4 e2. |
-                         % parenthesize natural?
-    d2 d4 d2 cis4 | d2. (c2.) | c2 f4 f2 e4 | f2. \bar"|." 
+    d8 | g8 d8 d8. (c16 b8) d8 | g8 g8 fis4 r8 d8 | e8 fis8 g8 (d4) e8 |
+    c8 c8 d4 r8 d8 | g8 d8 d8. (c16 b8) d8 | g8 g8 fis4 r8 e8 |
+    e8 d8 e8 (f4) e8 | d8 c8 d4 r8 g8 | g8 a8 g8 (e4) f8 |
+    f8 c8 d4. d8 | d8[ d8] g8 (d4) e8 | d8 e8 d4 r8 d8 |
+    g8 d8 b8. (c16 d8) e8 | f8 e8 d4 r8 d8 | f8 f8 \slurDashed d8 (d4) d8 | g8 d8 b4. \bar"|."
 }
 
-tenorMusic = \relative c' {
-    b4 | a2 b4 c2 d4 | a2 (b4 c2) c4 | b2 a4 c2 d4 | c2 (b4 g2.) |
-    c2 b4 g2 c4 | c2 b4 a2. | c2 d4 c2 b4 | a2 c4 c2. |
-    c2 b4 c2 c4 | c2 b4 a2 c4 | d2 d4 c4. (b8) c4 | a2 c4 c2. |
-    f,2 a4 g2 a4 | a4. (b8 a4 g2.) | f2 c'4 d2 c4 | a2. \bar"|." 
+tenorMusic = \relative c {
+    d8 | g8 a8 b8. (c16 d8) d8 | b8 g8 a4 r8 b8 | a8 fis8 b8 (a8) c8 (b8) |
+    a8 g8 a4 r8 d,8 | g8 a8 b8. (c16 d8) d8 | b8 g8 a4 r8 g8 |
+    g8 g8 g4 c4 | b8 c8 b4 r8 g8 | g8 c8 b8 (a4) c8 |
+    bes8 a8 f4. g8 | \times 2/3 {g8 a8 bes8} bes8 (a8) bes8 (c8) | a8 c8 a4 r8 d,8 |
+    g8 a8 g8. (a16 b8) c8 | d8 c8 a4 r8 g8 | a8 a8 \slurDashed g8 (b4) a8 | b8 c8 d4. \bar"|."
 }
 
-bassMusic = \relative c' {
-    b,4 | f'2 f4 f2 f4 | f2. (g2) a4 | f2 f4 f2 f4 | f2. (c2.) |
-    a2 b4 c2 e4 | f2 c4 d2. | c2 b4 a2 c4 | d2 c4 f2. |
-    a2 b4 a2 e4 | f2 c4 d2 a'4 | b2 b,4 c2 c4 | d2 c4 a2. |
-    d2 f4 e2 a,4 | d2. (e2.) | f2 a,4 b2 c4 | f2. \bar"|." 
+bassMusic = \relative c {
+    d8 | g8 d8 b8. (a16 g8) fis'8 | e8 e8 d4 r8 b8 | c8 d8 e8 (fis8) g4 |
+    f8 e8 d4 r8 d8 | g8 d8 b8. (a16 g8) fis'8 | e8 e8 d4 r8 e8 |
+    c8 b8 c8 (d8) c4 | g'8 e8 g4 r8 g8 | g8 f8 g8 (a4) fis8 |
+    g8 f8 bes,4. g8 | g'8[ g8] g8[ (f8)] g8] (a8)] | d,8 c8 d4 r8 d8 |
+    g8 d8 e4. fis8 | g8 a8 fis4 r8 g8 | f8 d8 \slurDashed g8 (g4) fis8 | e8 a8 g4.\fermata \bar"|."
 }
 
 VerseI = \lyricmode
@@ -133,8 +130,11 @@ VerseIII = \lyricmode
       \dynamik
       \tempos
       \dynamicUp
+      %\partcombine \sopMusic \altoMusic
+      %\new Voice = "sopranos" { \voiceOne << \GlobalSettings \sopMusic >> }
+      %\new Voice = "alto" { \voiceTwo << \GlobalSettings \altoMusic >> }
       \context Voice = sopranos { \voiceOne << \GlobalSettings \sopMusic >> }
-      %\context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
+      \context Voice = altos { \voiceTwo << \GlobalSettings \altoMusic >> }
       %\set Staff.instrument = \markup { \column { "S" \line {"A"} } }
     >>
     \context Lyrics = sopranosI \lyricsto sopranos \VerseI
@@ -145,8 +145,8 @@ VerseIII = \lyricmode
       \clef bass
       \dynamik
       \dynamicDown
-      %\context Voice = tenors { \voiceOne <<\GlobalSettings \tenorMusic >> }
-      %\context Voice = basses { \voiceTwo <<\GlobalSettings \bassMusic >> }
+      \context Voice = tenors { \voiceOne <<\GlobalSettings \tenorMusic >> }
+      \context Voice = basses { \voiceTwo <<\GlobalSettings \bassMusic >> }
       %\set Staff.instrument = \markup { \column { "T" \line {"B"} } }
     >>
   >>
