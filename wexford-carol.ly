@@ -12,33 +12,14 @@
 
 
 \paper {
-% 	between-system-space = 0.3\cm
 	between-system-padding = 0.3\cm
 	after-title-space = 0.05\cm
     indent = 0
-% 	ragged-bottom = ##f
-% 	ragged-last-bottom = ##f
-    %page-breaking = #ly:minimal-breaking
-    %page-count = #2
-    %system-count = #5
-
 }
 
-%\include "deutsch.ly"
 
 ScoreSettings = {
-% 	\set Score.skipBars = ##t
-% 	\override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-0 . 0)
-% 	\set Staff.midiInstrument = "acoustic grand"
-% 	\override Lyrics.VerticalAxisGroup #'minimum-Y-extent = #'(-0 . 0)
-	% left-align all rehearsal marks
-% 	\override Score.RehearsalMark #'self-alignment-X = #-1
-% 	\override Score.RehearsalMark #'padding = #2.8
-% 	\override Score.RehearsalMark #'font-size = #1
-% 	\override Score.RehearsalMark #'font-shape = #'italic
-%
-	%\override Score.BarNumber  #'break-visibility = #end-of-line-invisible
-	%\set Score.barNumberVisibility = #(every-nth-bar-number-visible 5)
+
 }
 
 GlobalSettings = \notemode
@@ -46,8 +27,6 @@ GlobalSettings = \notemode
 	\key g \major
 	\time 3/4
 	\partial 8
-% 	\autoBeamOff
-	%\revert Rest #'direction
 	\revert MultiMeasureRest #'staff-position
 }
 

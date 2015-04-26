@@ -48,7 +48,7 @@ text = \lyricmode {
   Oh- _ praise Him! Al -- le -- lu -- ia!
   Praise, praise the Fa -- ther, praise the Son,
   And praise the Spir -- it, Three in One!
-  Oh- _ praise Him! Al -- le -- lu -- ia!
+  Oh- _ praise Him! Oh- _ praise Him!
   Al -- le -- lu -- ia! Al -- le -- lu -- ia! Al -- le -- lu -- ia!
 
 }
